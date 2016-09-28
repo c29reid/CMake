@@ -194,8 +194,8 @@ public:
 
   static void GetDocumentation(cmDocumentationEntry& entry);
 
-  void EnableLanguage(std::vector<std::string> const& languages, cmMakefile*,
-                      bool optional, bool internal) CM_OVERRIDE;
+  void EnableLanguage(std::vector<std::string> const& languages,
+                      cmMakefile* mf, bool optional) CM_OVERRIDE;
 
   void GenerateBuildCommand(std::vector<std::string>& makeCommand,
                             const std::string& makeProgram,

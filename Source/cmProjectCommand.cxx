@@ -199,7 +199,7 @@ bool cmProjectCommand::InitialPass(std::vector<std::string> const& args,
     languages.push_back("C");
     languages.push_back("CXX");
   }
-  this->Makefile->EnableLanguage(languages, false, false);
+  this->Makefile->EnableLanguage(languages, false);
   std::string extraInclude = "CMAKE_PROJECT_" + args[0] + "_INCLUDE";
   const char* include = this->Makefile->GetDefinition(extraInclude);
   if (include) {

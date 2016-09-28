@@ -317,6 +317,6 @@ macro(__windows_compiler_msvc lang)
     string(APPEND CMAKE_RC_FLAGS_INIT " ${_PLATFORM_DEFINES} ${_PLATFORM_DEFINES_${lang}}")
   endif()
 
-  enable_language(RC __CMAKE_INTERNAL)
+  enable_language(RC)
   set(CMAKE_NINJA_CMCLDEPS_RC 1)
 endmacro()

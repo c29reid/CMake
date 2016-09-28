@@ -241,8 +241,7 @@ bool cmGlobalXCodeGenerator::SetGeneratorToolset(std::string const& ts,
 }
 
 void cmGlobalXCodeGenerator::EnableLanguage(
-  std::vector<std::string> const& lang, cmMakefile* mf, bool optional,
-  bool internal)
+  std::vector<std::string> const& lang, cmMakefile* mf, bool optional)
 {
   mf->AddDefinition("XCODE", "1");
   mf->AddDefinition("XCODE_VERSION", this->VersionString.c_str());
@@ -258,7 +257,7 @@ void cmGlobalXCodeGenerator::EnableLanguage(
     }
   }
   mf->AddDefinition("CMAKE_GENERATOR_NO_COMPILER_ENV", "1");
-  this->cmGlobalGenerator::EnableLanguage(lang, mf, optional, internal);
+  this->cmGlobalGenerator::EnableLanguage(lang, mf, optional);
   const char* osxArch = mf->GetDefinition("CMAKE_OSX_ARCHITECTURES");
   const char* sysroot = mf->GetDefinition("CMAKE_OSX_SYSROOT");
   if (osxArch && sysroot) {

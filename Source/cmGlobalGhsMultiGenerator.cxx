@@ -49,8 +49,7 @@ void cmGlobalGhsMultiGenerator::GetDocumentation(cmDocumentationEntry& entry)
 }
 
 void cmGlobalGhsMultiGenerator::EnableLanguage(
-  std::vector<std::string> const& l, cmMakefile* mf, bool optional,
-  bool internal)
+  std::vector<std::string> const& l, cmMakefile* mf, bool optional)
 {
   mf->AddDefinition("CMAKE_SYSTEM_NAME", "GHS-MULTI");
   mf->AddDefinition("CMAKE_SYSTEM_PROCESSOR", "ARM");
@@ -80,7 +79,7 @@ void cmGlobalGhsMultiGenerator::EnableLanguage(
   }
 
   mf->AddDefinition("GHSMULTI", "1"); // identifier for user CMake files
-  this->cmGlobalGenerator::EnableLanguage(l, mf, optional, internal);
+  this->cmGlobalGenerator::EnableLanguage(l, mf, optional);
 }
 
 void cmGlobalGhsMultiGenerator::FindMakeProgram(cmMakefile* mf)

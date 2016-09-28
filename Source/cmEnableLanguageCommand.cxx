@@ -16,7 +16,6 @@ bool cmEnableLanguageCommand::InitialPass(std::vector<std::string> const& args,
                                           cmExecutionStatus&)
 {
   bool optional = false;
-  bool internal = false;
   std::vector<std::string> languages;
   if (args.empty()) {
     this->SetError("called with incorrect number of arguments");
@@ -26,13 +25,11 @@ bool cmEnableLanguageCommand::InitialPass(std::vector<std::string> const& args,
        it != args.end(); ++it) {
     if ((*it) == "OPTIONAL") {
       optional = true;
-    } else if ((*it) == "__CMAKE_INTERNAL") {
-      internal = true;
     } else {
       languages.push_back(*it);
     }
   }
 
-  this->Makefile->EnableLanguage(languages, optional, internal);
+  this->Makefile->EnableLanguage(languages, optional);
   return true;
 }

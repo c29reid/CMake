@@ -105,7 +105,7 @@ public:
    * extension, pthreads, byte order etc.
    */
   void EnableLanguage(std::vector<std::string> const& languages, cmMakefile*,
-                      bool optional, bool internal) CM_OVERRIDE;
+                      bool optional) CM_OVERRIDE;
 
   void Configure() CM_OVERRIDE;
 

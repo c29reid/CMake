@@ -52,7 +52,7 @@ public:
    * extension, pthreads, byte order etc.
    */
   void EnableLanguage(std::vector<std::string> const& languages, cmMakefile*,
-                      bool optional, bool internal) CM_OVERRIDE;
+                      bool optional) CM_OVERRIDE;
 
   bool AllowNotParallel() const CM_OVERRIDE { return false; }
   bool AllowDeleteOnError() const CM_OVERRIDE { return false; }
