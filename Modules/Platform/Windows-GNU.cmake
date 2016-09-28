@@ -132,7 +132,7 @@ macro(__windows_compiler_gnu lang)
     set(CMAKE_RC_COMPILER_INIT windres)
   endif()
 
-  enable_language(RC __CMAKE_INTERNAL)
+  enable_language(RC)
 endmacro()
 
 macro(__windows_compiler_gnu_abi lang)

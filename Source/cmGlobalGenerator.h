@@ -110,7 +110,7 @@ public:
    * extension, pthreads, byte order etc.
    */
   virtual void EnableLanguage(std::vector<std::string> const& languages,
-                              cmMakefile*, bool optional, bool internal);
+                              cmMakefile*, bool optional);
 
   /**
    * Resolve the CMAKE_<lang>_COMPILER setting for the given language.

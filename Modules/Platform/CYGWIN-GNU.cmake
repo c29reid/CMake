@@ -47,5 +47,5 @@ macro(__cygwin_compiler_gnu lang)
     set(CMAKE_RC_COMPILER_INIT windres)
   endif()
 
-  enable_language(RC __CMAKE_INTERNAL)
+  enable_language(RC)
 endmacro()

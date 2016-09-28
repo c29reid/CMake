@@ -565,8 +565,8 @@ public:
 
   ///! Enable support for named language, if nil then all languages are
   /// enabled.
-  void EnableLanguage(std::vector<std::string> const& languages, bool optional,
-                      bool internal);
+  void EnableLanguage(std::vector<std::string> const& languages,
+                      bool optional);
 
   cmState* GetState() const;
 

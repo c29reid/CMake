@@ -306,10 +306,9 @@ void cmGlobalVisualStudio10Generator::Generate()
 }
 
 void cmGlobalVisualStudio10Generator::EnableLanguage(
-  std::vector<std::string> const& lang, cmMakefile* mf, bool optional,
-  bool internal)
+  std::vector<std::string> const& lang, cmMakefile* mf, bool optional)
 {
-  cmGlobalVisualStudio8Generator::EnableLanguage(lang, mf, optional, internal);
+  cmGlobalVisualStudio8Generator::EnableLanguage(lang, mf, optional);
 }
 
 const char* cmGlobalVisualStudio10Generator::GetPlatformToolset() const

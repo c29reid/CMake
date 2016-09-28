@@ -629,10 +629,9 @@ bool cmGlobalNinjaGenerator::CheckFortran(cmMakefile* mf) const
 }
 
 void cmGlobalNinjaGenerator::EnableLanguage(
-  std::vector<std::string> const& langs, cmMakefile* mf, bool optional,
-  bool internal)
+  std::vector<std::string> const& langs, cmMakefile* mf, bool optional)
 {
-  this->cmGlobalGenerator::EnableLanguage(langs, mf, optional, internal);
+  this->cmGlobalGenerator::EnableLanguage(langs, mf, optional);
   for (std::vector<std::string>::const_iterator l = langs.begin();
        l != langs.end(); ++l) {
     if (*l == "NONE") {

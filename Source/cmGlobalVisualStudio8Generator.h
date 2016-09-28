@@ -23,8 +23,8 @@ public:
   /** Get the documentation entry for this generator.  */
   static void GetDocumentation(cmDocumentationEntry& entry);
 
-  void EnableLanguage(std::vector<std::string> const& languages, cmMakefile*,
-                      bool optional, bool internal) CM_OVERRIDE;
+  virtual void EnableLanguage(std::vector<std::string> const& languages,
+                              cmMakefile*, bool optional);
   virtual void AddPlatformDefinitions(cmMakefile* mf);
 
   virtual bool SetGeneratorPlatform(std::string const& p, cmMakefile* mf);

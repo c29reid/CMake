@@ -362,8 +362,7 @@ bool cmGlobalGenerator::CheckLanguages(
 //
 
 void cmGlobalGenerator::EnableLanguage(
-  std::vector<std::string> const& languages, cmMakefile* mf, bool optional,
-  bool internal)
+  std::vector<std::string> const& languages, cmMakefile* mf, bool optional)
 {
   if (languages.empty()) {
     cmSystemTools::Error("EnableLanguage must have a lang specified!");
@@ -371,12 +370,10 @@ void cmGlobalGenerator::EnableLanguage(
     return;
   }
 
-  std::set<std::string> cur_languages;
-  for (std::vector<std::string>::const_iterator li = languages.begin();
-       li != languages.end(); ++li) {
-    if (this->LanguagesInProgress.insert(*li).second) {
-      cur_languages.insert(*li);
-    } else if (!internal) {
+  std::set<std::string> cur_languages(languages.begin(), languages.end());
+  for (std::set<std::string>::iterator li = cur_languages.begin();
+       li != cur_languages.end(); ++li) {
+    if (!this->LanguagesInProgress.insert(*li).second) {
       std::ostringstream e;
       e << "Language '" << *li << "' is currently being enabled.  "
                                   "Recursive call not allowed.";

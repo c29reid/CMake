@@ -44,10 +44,9 @@ cmGlobalUnixMakefileGenerator3::cmGlobalUnixMakefileGenerator3(cmake* cm)
 }
 
 void cmGlobalUnixMakefileGenerator3::EnableLanguage(
-  std::vector<std::string> const& languages, cmMakefile* mf, bool optional,
-  bool internal)
+  std::vector<std::string> const& languages, cmMakefile* mf, bool optional)
 {
-  this->cmGlobalGenerator::EnableLanguage(languages, mf, optional, internal);
+  this->cmGlobalGenerator::EnableLanguage(languages, mf, optional);
   for (std::vector<std::string>::const_iterator l = languages.begin();
        l != languages.end(); ++l) {
     if (*l == "NONE") {
