@@ -8,7 +8,7 @@ static std::string escape_arg(const std::string& arg)
 {
   // replace ";" with "\;" so output argument lists will split correctly
   std::string escapedArg;
-  for (unsigned int i = 0; i < arg.size(); ++i) {
+  for (size_t i = 0; i < arg.size(); ++i) {
     if (arg[i] == ';') {
       escapedArg += '\\';
     }
