@@ -83,7 +83,7 @@ typedef int64_t la_int64_t;
 # endif
 #define __LA_SSIZE_T_DEFINED
 # if defined(_WIN32) && !defined(__CYGWIN__) && !defined(__WATCOMC__)
-#  if defined(_SSIZE_T_DEFINED) || defined(_SSIZE_T_) || defined(__MINGW32__)
+#  if defined(_SSIZE_T_DEFINED) || defined(_SSIZE_T_)
 typedef ssize_t la_ssize_t;
 #  elif defined(_WIN64)
 typedef __int64 la_ssize_t;
