@@ -69,6 +69,10 @@
 #include <string>
 #include <windows.h>
 
+#if defined(__MINGW32__)
+# define CLSID GUID  /* Some MinGW header combinations miss this typedef. */
+#endif
+
 typedef struct cmANON_OBJECT_HEADER_BIGOBJ {
    /* same as ANON_OBJECT_HEADER_V2 */
     WORD    Sig1;            // Must be IMAGE_FILE_MACHINE_UNKNOWN
